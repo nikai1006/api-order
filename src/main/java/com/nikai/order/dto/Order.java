@@ -51,25 +51,6 @@ public class Order implements Serializable {
      */
     private BigDecimal reduceAmount;
 
-    /**
-     * java.lang.Integer:赠送积分
-     */
-    private Integer point;
-
-    /**
-     * java.lang.Integer:订单状态
-     */
-    private Integer status;
-
-    /**
-     * java.lang.Integer:支付状态
-     */
-    private Integer payStatus;
-
-    /**
-     * java.lang.Integer:配送状态
-     */
-    private Integer deliverStatus;
 
     /**
      * java.lang.Integer:支付方式
@@ -101,62 +82,6 @@ public class Order implements Serializable {
      */
     private Date payTime;
 
-    /**
-     * java.lang.Integer:省
-     */
-    private Integer province;
-
-    /**
-     * java.lang.Integer:市id
-     */
-    private Integer city;
-
-    /**
-     * java.lang.Integer:地区id
-     */
-    private Integer area;
-
-    /**
-     * java.lang.String:省市字符串
-     */
-    private String pca;
-
-
-    /**
-     * java.lang.Integer:城市编码
-     */
-    private Integer country;
-
-    /**
-     * java.lang.String:详细地址
-     */
-    private String detatilAddress;
-
-
-    /**
-     * java.lang.String:收货人
-     */
-    private String deliverUserName;
-
-    /**
-     * java.lang.String:手机
-     */
-    private String mobile;
-
-    /**
-     * java.lang.String:邮编
-     */
-    private String postCode;
-
-    /**
-     * java.lang.String:电话
-     */
-    private String telphone;
-
-    /**
-     * java.util.Date:发货时间
-     */
-    private Date deliverStartedTime;
 
     /**
      * java.util.Date:下单时间
@@ -259,37 +184,13 @@ public class Order implements Serializable {
      */
     private Integer goodsNum;
 
-    /**
-     * java.lang.Integer: 有没有更改地址
-     */
-    private Integer isModifyAddress;
-
-    /**
-     * java.lang.Integer:是否可以取消 0:不可取消 1:可以取消
-     */
-    private Integer cancelFlag;
-
-    /**
-     * java.lang.Integer: 是否有关联订单 0:没有关联订单 1:有关联订单
-     */
-    private Integer relatedOrderFlag;
-
-
-    /**
-     * java.lang.Integer: 待发货订单关联订单是否存在发货前退款商品 0：不存在 1：存在
-     */
-    private Integer goodsRefundFlag;
-
-    /**
-     * java.lang.Integer: 是否有赠品标示
-     */
-    private Integer giftFlag;
 
     /**
      * @required FALSE
      */
     private List<GoodsInfo> goods;
 
+    private MultiTypeDto<String, Integer, GoodsInfo> multiTypeDto;
 
     public Long getUserId() {
         return userId;
@@ -347,37 +248,6 @@ public class Order implements Serializable {
         this.reduceAmount = reduceAmount;
     }
 
-    public Integer getPoint() {
-        return point;
-    }
-
-    public void setPoint(Integer point) {
-        this.point = point;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Integer getPayStatus() {
-        return payStatus;
-    }
-
-    public void setPayStatus(Integer payStatus) {
-        this.payStatus = payStatus;
-    }
-
-    public Integer getDeliverStatus() {
-        return deliverStatus;
-    }
-
-    public void setDeliverStatus(Integer deliverStatus) {
-        this.deliverStatus = deliverStatus;
-    }
 
     public Integer getPayType() {
         return payType;
@@ -425,94 +295,6 @@ public class Order implements Serializable {
 
     public void setPayTime(Date payTime) {
         this.payTime = payTime;
-    }
-
-    public Integer getProvince() {
-        return province;
-    }
-
-    public void setProvince(Integer province) {
-        this.province = province;
-    }
-
-    public Integer getCity() {
-        return city;
-    }
-
-    public void setCity(Integer city) {
-        this.city = city;
-    }
-
-    public Integer getArea() {
-        return area;
-    }
-
-    public void setArea(Integer area) {
-        this.area = area;
-    }
-
-    public String getPca() {
-        return pca;
-    }
-
-    public void setPca(String pca) {
-        this.pca = pca;
-    }
-
-    public Integer getCountry() {
-        return country;
-    }
-
-    public void setCountry(Integer country) {
-        this.country = country;
-    }
-
-    public String getDetatilAddress() {
-        return detatilAddress;
-    }
-
-    public void setDetatilAddress(String detatilAddress) {
-        this.detatilAddress = detatilAddress;
-    }
-
-    public String getDeliverUserName() {
-        return deliverUserName;
-    }
-
-    public void setDeliverUserName(String deliverUserName) {
-        this.deliverUserName = deliverUserName;
-    }
-
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
-
-    public String getPostCode() {
-        return postCode;
-    }
-
-    public void setPostCode(String postCode) {
-        this.postCode = postCode;
-    }
-
-    public String getTelphone() {
-        return telphone;
-    }
-
-    public void setTelphone(String telphone) {
-        this.telphone = telphone;
-    }
-
-    public Date getDeliverStartedTime() {
-        return deliverStartedTime;
-    }
-
-    public void setDeliverStartedTime(Date deliverStartedTime) {
-        this.deliverStartedTime = deliverStartedTime;
     }
 
     public Date getCreatedTime() {
@@ -675,52 +457,21 @@ public class Order implements Serializable {
         this.goodsNum = goodsNum;
     }
 
-    public Integer getIsModifyAddress() {
-        return isModifyAddress;
-    }
-
-    public void setIsModifyAddress(Integer isModifyAddress) {
-        this.isModifyAddress = isModifyAddress;
-    }
-
-    public Integer getCancelFlag() {
-        return cancelFlag;
-    }
-
-    public void setCancelFlag(Integer cancelFlag) {
-        this.cancelFlag = cancelFlag;
-    }
-
-    public Integer getRelatedOrderFlag() {
-        return relatedOrderFlag;
-    }
-
-    public void setRelatedOrderFlag(Integer relatedOrderFlag) {
-        this.relatedOrderFlag = relatedOrderFlag;
-    }
-
-    public Integer getGoodsRefundFlag() {
-        return goodsRefundFlag;
-    }
-
-    public void setGoodsRefundFlag(Integer goodsRefundFlag) {
-        this.goodsRefundFlag = goodsRefundFlag;
-    }
-
-    public Integer getGiftFlag() {
-        return giftFlag;
-    }
-
-    public void setGiftFlag(Integer giftFlag) {
-        this.giftFlag = giftFlag;
-    }
-
     public List<GoodsInfo> getGoods() {
         return goods;
     }
 
     public void setGoods(List<GoodsInfo> goods) {
         this.goods = goods;
+    }
+
+    public MultiTypeDto<String, Integer, GoodsInfo> getMultiTypeDto() {
+        return multiTypeDto;
+    }
+
+    public void setMultiTypeDto(
+        MultiTypeDto<String, Integer, GoodsInfo> multiTypeDto) {
+        this.multiTypeDto = multiTypeDto;
     }
 
     @Override
@@ -733,27 +484,12 @@ public class Order implements Serializable {
             ", couponAmount=" + couponAmount +
             ", couponCode='" + couponCode + '\'' +
             ", reduceAmount=" + reduceAmount +
-            ", point=" + point +
-            ", status=" + status +
-            ", payStatus=" + payStatus +
-            ", deliverStatus=" + deliverStatus +
             ", payType=" + payType +
             ", paymentFlowNo='" + paymentFlowNo + '\'' +
             ", payNo='" + payNo + '\'' +
             ", deliveryCode='" + deliveryCode + '\'' +
             ", deliverCompanyName='" + deliverCompanyName + '\'' +
             ", payTime=" + payTime +
-            ", province=" + province +
-            ", city=" + city +
-            ", area=" + area +
-            ", pca='" + pca + '\'' +
-            ", country=" + country +
-            ", detatilAddress='" + detatilAddress + '\'' +
-            ", deliverUserName='" + deliverUserName + '\'' +
-            ", mobile='" + mobile + '\'' +
-            ", postCode='" + postCode + '\'' +
-            ", telphone='" + telphone + '\'' +
-            ", deliverStartedTime=" + deliverStartedTime +
             ", createdTime=" + createdTime +
             ", completedTime=" + completedTime +
             ", closeTime=" + closeTime +
@@ -774,11 +510,7 @@ public class Order implements Serializable {
             ", expireTime='" + expireTime + '\'' +
             ", currentServerTime='" + currentServerTime + '\'' +
             ", goodsNum=" + goodsNum +
-            ", isModifyAddress=" + isModifyAddress +
-            ", cancelFlag=" + cancelFlag +
-            ", relatedOrderFlag=" + relatedOrderFlag +
-            ", goodsRefundFlag=" + goodsRefundFlag +
-            ", giftFlag=" + giftFlag +
+            ", goods=" + goods +
             '}';
     }
 }

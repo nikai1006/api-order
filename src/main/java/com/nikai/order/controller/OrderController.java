@@ -1,11 +1,14 @@
 package com.nikai.order.controller;
 
 import com.jiatui.spi.ServiceResponse;
+import com.nikai.order.dto.GoodsInfo;
+import com.nikai.order.dto.MultiTypeDto;
 import com.nikai.order.dto.Order;
 import java.util.List;
 import java.util.Map;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -143,4 +146,22 @@ public class OrderController {
         return null;
     }
 
+    /**
+     * 多泛型测试
+     *
+     * @return 多泛型
+     * @service 多泛型测试
+     * @scene 小程序
+     * @type COMMAND
+     * @param multiTypeDto 订单信息
+     * @code 0#成功
+     * @code 1#系统异常
+     * @code 41003#参数失败
+     * @code 2#操作繁忙
+     */
+    @PostMapping("/multi/query")
+    @ResponseBody
+    public MultiTypeDto<String,Integer,GoodsInfo> queryMultiTypeDto(@RequestBody MultiTypeDto<Integer,GoodsInfo,Double> multiTypeDto){
+        return null;
+    }
 }
