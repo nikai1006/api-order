@@ -1,7 +1,7 @@
 node {
     stage('Build') {
         echo 'Building....'
-        sh 'make'
+        mvn clean package
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
     stage('Test') {
