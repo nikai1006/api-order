@@ -1,8 +1,8 @@
 node {
     stage('Build') {
         echo 'Building....'
-        sh 'make' // 调用 make 命令
-        archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true  // 匹配并保存文件供以后检索
+        sh 'make'
+        archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
     stage('Test') {
         echo 'Testing....'
