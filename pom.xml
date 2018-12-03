@@ -30,7 +30,7 @@
     <dependency>
       <groupId>com.jiatui.spi</groupId>
       <artifactId>spi</artifactId>
-      <version>LATEST</version>
+      <version>1.2.6-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
